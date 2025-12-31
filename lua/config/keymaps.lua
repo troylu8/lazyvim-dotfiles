@@ -9,9 +9,13 @@ vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 -- f2 to rename
 vim.keymap.set({ "n", "i" }, "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
 
--- ctrl u/d to scroll while keeping cursor still
-vim.keymap.set("n", "<C-u>", "8<C-y>", { noremap = true })
-vim.keymap.set("n", "<C-d>", "8<C-e>", { noremap = true })
+-- ctrl alt J/K to scroll while keeping cursor still
+vim.keymap.set({"n", "i"}, "<C-M-K>", "8<C-y>", { noremap = true })
+vim.keymap.set({"n", "i"}, "<C-M-J>", "8<C-e>", { noremap = true })
+
+-- J/K to move cursor
+vim.keymap.set("n", "K", "8k", { noremap = true })
+vim.keymap.set("n", "J", "8j", { noremap = true })
 
 -- Map Alt + 1 to Alt + 9 to jump to the corresponding buffer by its ordinal number
 vim.api.nvim_set_keymap("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
