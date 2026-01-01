@@ -13,5 +13,5 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     if vim.fn.bufname("%") ~= "" then
       vim.cmd("silent update")
     end
-  end
+  end,
 })

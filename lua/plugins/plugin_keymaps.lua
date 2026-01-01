@@ -33,4 +33,13 @@ return {
       },
     },
   },
+    {
+        "akinsho/bufferline.nvim",
+        opts = {
+            options = {
+                tab_size = 14,
+                enforce_regular_tabs = false
+            }
+        }
+    }
 }
