@@ -10,8 +10,8 @@ return {
           LineNrAbove = { fg = colors.lavender },
           LineNrBelow = { fg = colors.lavender },
         }
-      end
-    }
+      end,
+    },
   },
   {
     "LazyVim/LazyVim",
@@ -45,9 +45,15 @@ return {
     opts = {
       completion = {
         ghost_text = {
-          enabled = false
-        }
-      }
-    }
-  }
+          enabled = false,
+        },
+      },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
 }
