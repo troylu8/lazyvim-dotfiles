@@ -54,6 +54,26 @@ return {
     "folke/snacks.nvim",
     opts = {
       scroll = { enabled = false },
+      dashboard = {
+        width = 30,
+        preset = {
+          keys = {
+            { icon = " ", key = "f", desc = "find file", action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = " ", key = "g", desc = "grep", action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = " ", key = "r", desc = "recent files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            { icon = " ", key = "s", desc = "restore session", section = "session" },
+            { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+            { icon = " ", key = "q", desc = "quit", action = ":qa" },
+          },
+        },
+        sections = {
+          {
+            section = "keys",
+            gap = 1,
+            padding = 1,
+          },
+        },
+      },
     },
   },
 }
