@@ -17,6 +17,9 @@ vim.keymap.set({"n", "i"}, "<C-M-J>", "8<C-e>", { noremap = true })
 vim.keymap.set("n", "K", "8k", { noremap = true })
 vim.keymap.set("n", "J", "8j", { noremap = true })
 
+-- home to ^
+vim.keymap.set("i", "<Home>", "<C-o>^", { noremap = true })
+
 -- Map Alt + 1 to Alt + 9 to jump to the corresponding buffer by its ordinal number
 vim.api.nvim_set_keymap("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-2>", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
