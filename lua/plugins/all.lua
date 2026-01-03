@@ -1,4 +1,7 @@
 return {
+
+  { "folke/tokyonight.nvim", enabled = false },
+  { "noice.nvim", enabled = false },
   {
     "catppuccin/nvim",
     lazy = false,
@@ -16,7 +19,81 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      format = {
+        auto = false,
+      },
+      colorscheme = "catppuccin-mocha"
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        c = { "clang-format" },
+        cpp = { "clang-format" },
+      },
+      formatters = {
+        ["clang-format"] = {
+          prepend_args = {
+            "-style={IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+          },
+        },
+      },
+    },
+  },
+  {
+    "axkirillov/hbac.nvim",
+    config = true,
+    opts = {
+      threshold = 0,
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    keys = {
+      {
+        "<C-p>",
+        "<cmd>lua Snacks.picker.files()<cr>",
+        desc = "find file",
+      },
+    },
+    opts = {
+      indent = {
+        enabled = false,
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ["*"] = {
+          keys = {
+            { "K", false },
+            {
+              "<C-.>",
+              function()
+                return vim.lsp.buf.hover()
+              end,
+              desc = "Hover",
+            },
+          },
+        },
+        clangd = {
+          cmd = { "clangd", "--header-insertion=never" },
+        },
+      },
+    },
+  },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        tab_size = 14,
+        enforce_regular_tabs = false,
+        numbers = "ordinal",
+        always_show_bufferline = true,
+      },
     },
   },
   {
@@ -29,15 +106,6 @@ return {
         lualine_x = { "diagnostics" },
         lualine_y = { "encoding", "filetype" },
         lualine_z = { "progress" },
-      },
-    },
-  },
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        numbers = "ordinal",
-        always_show_bufferline = true,
       },
     },
   },
@@ -72,8 +140,8 @@ return {
           keys = {
             { icon = " ", key = "f", desc = "find file", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "g", desc = "grep", action = ":lua Snacks.dashboard.pick('live_grep')" },
-            { icon = " ", key = "r", desc = "recent files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
             { icon = " ", key = "s", desc = "restore session", section = "session" },
+            { icon = " ", key = "c", desc = "config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
             { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
             { icon = " ", key = "q", desc = "quit", action = ":qa" },
           },
