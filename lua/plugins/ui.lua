@@ -37,6 +37,7 @@ return {
     opts = {
       options = {
         numbers = "ordinal",
+        always_show_bufferline = true,
       },
     },
   },
@@ -54,6 +55,17 @@ return {
     "folke/snacks.nvim",
     opts = {
       scroll = { enabled = false },
+      picker = {
+        sources = {
+          explorer = {
+            layout = {
+              layout = {
+                width = 32,
+              },
+            },
+          },
+        },
+      },
       dashboard = {
         width = 30,
         preset = {

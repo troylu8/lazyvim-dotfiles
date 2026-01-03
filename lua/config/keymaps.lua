@@ -27,7 +27,7 @@ vim.keymap.set("v", "<C-/>", "gc", { remap = true })
 vim.keymap.set("i", "<Home>", "<C-o>^", { noremap = true })
 
 -- ctrl w
-vim.keymap.set("n", "<C-w>", "<leader>bd", { noremap = true })
+vim.keymap.set("n", "<C-w>", ":bdelete<CR>", { noremap = true });
 
 -- Map Alt + 1 to Alt + 9 to jump to the corresponding buffer by its ordinal number
 vim.api.nvim_set_keymap("n", "<A-1>", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })

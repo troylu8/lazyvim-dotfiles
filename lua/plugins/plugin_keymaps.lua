@@ -30,16 +30,19 @@ return {
             },
           },
         },
+        clangd = {
+          cmd = { "clangd", "--header-insertion=never" },
+        },
       },
     },
   },
-    {
-        "akinsho/bufferline.nvim",
-        opts = {
-            options = {
-                tab_size = 14,
-                enforce_regular_tabs = false
-            }
-        }
-    }
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        tab_size = 14,
+        enforce_regular_tabs = false,
+      },
+    },
+  },
 }
