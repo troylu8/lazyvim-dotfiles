@@ -57,9 +57,7 @@ return {
             },
         },
         opts = {
-            indent = {
-                enabled = false,
-            },
+            indent = { enabled = false },
         },
     },
     {

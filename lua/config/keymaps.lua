@@ -4,6 +4,7 @@
 
 -- ctrl backspace/del to delete words
 vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true })
+vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 
 -- f2 to rename
@@ -22,6 +23,8 @@ vim.keymap.set("n", "<C-d>", "8<C-d>zz")
 -- toggle comments
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
 vim.keymap.set("v", "<C-/>", "gc", { remap = true })
+vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
+vim.keymap.set("v", "<C-_>", "gc", { remap = true })
 
 -- home to ^
 vim.keymap.set("i", "<Home>", "<C-o>^", { noremap = true })
