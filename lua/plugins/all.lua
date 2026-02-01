@@ -171,5 +171,14 @@ return {
         },
     },
     { "dstein64/nvim-scrollview" },
-    { "pocco81/auto-save.nvim" }
+    {
+        "pocco81/auto-save.nvim",
+        opts = {
+            execution_message = {
+                message = function()
+                    return ""
+                end,
+            },
+        },
+    },
 }
