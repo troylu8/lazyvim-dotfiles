@@ -30,11 +30,18 @@ return {
             formatters_by_ft = {
                 c = { "clang-format" },
                 cpp = { "clang-format" },
+                typescriptreact = { "prettier" },
             },
             formatters = {
                 ["clang-format"] = {
                     prepend_args = {
-                        "-style={IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+                        "--style={IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 0}",
+                    },
+                },
+                ["prettier"] = {
+                    prepend_args = {
+                        "--tab-width", "4",
+                        "--use-tabs", "false",
                     },
                 },
             },
