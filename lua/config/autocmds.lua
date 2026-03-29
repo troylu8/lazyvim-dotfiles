@@ -7,6 +7,8 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
+-- ********** START ACTIVE/PREVIEW BUFFERS BEHAVIOR **********
+
 local active_bufs = {}
 local preview_buf = -1
 
@@ -47,14 +49,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
         -- if new buf is neither active nor the preview buf
         if active_bufs[e.buf] == nil and e.buf ~= preview_buf then
-
             -- if there's an existing preview buf, delete it
             if preview_buf ~= -1 then
                 local buf_to_delete = preview_buf
                 vim.schedule(function()
                     if vim.api.nvim_buf_is_valid(buf_to_delete) then
                         vim.bo[buf_to_delete].buflisted = false
-                        vim.api.nvim_buf_delete(buf_to_delete, {unload=true})
+                        vim.api.nvim_buf_delete(buf_to_delete, { unload = true })
                     end
                 end)
             end
@@ -72,3 +73,5 @@ vim.api.nvim_create_autocmd("BufDelete", {
         end
     end,
 })
+
+-- ********** END ACTIVE/PREVIEW BUFFERS BEHAVIOR **********

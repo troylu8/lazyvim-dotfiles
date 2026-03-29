@@ -1,6 +1,28 @@
 return {
     { "folke/tokyonight.nvim", enabled = false },
-    { "noice.nvim", enabled = false },
+    {
+        "noice.nvim",
+        opts = {
+            lsp = {
+                override = {
+                    ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                    ["vim.lsp.util.stylize_markdown"] = true,
+                    ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+                },
+                progress = { enabled = false }
+            },
+            cmdline = { enabled = false },
+            messages = { enabled = false },
+            views = {
+                hover = {
+                    border = {
+                        style = "rounded"
+                    },
+                    position = { row = 2 },
+                }
+            }
+        },
+    },
     {
         "catppuccin/nvim",
         lazy = false,
@@ -40,8 +62,10 @@ return {
                 },
                 ["prettier"] = {
                     prepend_args = {
-                        "--tab-width", "4",
-                        "--use-tabs", "false",
+                        "--tab-width",
+                        "4",
+                        "--use-tabs",
+                        "false",
                     },
                 },
             },
@@ -116,6 +140,7 @@ return {
     {
         "saghen/blink.cmp",
         opts = {
+            keymap = { preset = "super-tab" },
             completion = {
                 ghost_text = {
                     enabled = false,
