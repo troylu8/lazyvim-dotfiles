@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("SessionLoadPost", {
     end,
 })
 
-vim.api.nvim_create_autocmd("InsertEnter", {
+vim.api.nvim_create_autocmd({ "InsertEnter", "TextChanged" }, {
     callback = function(e)
         -- ignore bufs that arent normal file bufs
         if vim.bo[e.buf].buftype ~= "" then
@@ -53,7 +53,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
                 local buf_to_delete = preview_buf
                 vim.schedule(function()
                     if vim.api.nvim_buf_is_valid(buf_to_delete) then
-                        vim.api.nvim_buf_delete(buf_to_delete, {})
+                        vim.bo[buf_to_delete].buflisted = false
+                        vim.api.nvim_buf_delete(buf_to_delete, {unload=true})
                     end
                 end)
             end
