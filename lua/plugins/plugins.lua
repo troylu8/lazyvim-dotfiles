@@ -47,13 +47,13 @@ return {
             },
         },
     },
-    {
-        "axkirillov/hbac.nvim",
-        config = true,
-        opts = {
-            threshold = 0,
-        },
-    },
+    -- {
+    --     "axkirillov/hbac.nvim",
+    --     config = true,
+    --     opts = {
+    --         threshold = 0,
+    --     },
+    -- },
     {
         "folke/snacks.nvim",
         keys = {
@@ -181,11 +181,7 @@ return {
     {
         "pocco81/auto-save.nvim",
         opts = {
-            execution_message = {
-                message = function()
-                    return ""
-                end,
-            },
+            execution_message = { message = "" },
         },
     },
 }
