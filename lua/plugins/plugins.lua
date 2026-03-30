@@ -129,11 +129,11 @@ return {
         opts = {
             sections = {
                 lualine_a = { "mode" },
-                lualine_b = { "filename" },
-                lualine_c = { "branch" },
-                lualine_x = { "diagnostics" },
+                lualine_b = { "branch" },
+                lualine_c = { "diagnostics" },
+                lualine_x = { { "filename", path = 1 } },
                 lualine_y = { "encoding", "filetype" },
-                lualine_z = { "progress" },
+                lualine_z = { "location" },
             },
         },
     },
@@ -210,6 +210,24 @@ return {
         "pocco81/auto-save.nvim",
         opts = {
             execution_message = { message = "" },
+        },
+    },
+    {
+        "nvim-mini/mini.surround",
+        optional = true,
+        opts = {
+            mappings = {
+                add = "gza", -- Add surrounding in Normal and Visual modes
+                delete = "gzd", -- Delete surrounding
+                find = "gzf", -- Find surrounding (to the right)
+                find_left = "gzF", -- Find surrounding (to the left)
+                highlight = "gzh", -- Highlight surrounding
+                replace = "gzr", -- Replace surrounding
+                update_n_lines = "gzn", -- Update `n_lines`
+            },
+        },
+        keys = {
+            { "gz", "", desc = "+surround" },
         },
     },
 }
