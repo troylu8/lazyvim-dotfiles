@@ -9,18 +9,18 @@ return {
                     ["vim.lsp.util.stylize_markdown"] = true,
                     ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
                 },
-                progress = { enabled = false }
+                progress = { enabled = false },
             },
             cmdline = { enabled = false },
             messages = { enabled = false },
             views = {
                 hover = {
                     border = {
-                        style = "rounded"
+                        style = "rounded",
                     },
                     position = { row = 2 },
-                }
-            }
+                },
+            },
         },
     },
     {
@@ -119,7 +119,7 @@ return {
             options = {
                 tab_size = 14,
                 enforce_regular_tabs = false,
-                numbers = "ordinal",
+                numbers = "none",
                 always_show_bufferline = true,
             },
         },
@@ -162,6 +162,9 @@ return {
                             },
                         },
                     },
+                },
+                matcher = {
+                    frecency_bonus = true,
                 },
             },
             dashboard = {

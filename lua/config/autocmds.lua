@@ -32,7 +32,6 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "TextChanged" }, {
         if vim.bo[e.buf].buftype ~= "" then
             return
         end
-
         active_bufs[e.buf] = true
         if e.buf == preview_buf then
             preview_buf = -1

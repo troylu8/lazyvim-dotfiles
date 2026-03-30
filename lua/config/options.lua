@@ -9,3 +9,7 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.scroll = 8
 vim.g.root_spec = { "cwd" }
+vim.opt.listchars = {
+    tab = "  ",
+    trail = " ",
+}
