@@ -42,3 +42,8 @@ vim.keymap.set("n", "<A-0>", ":BufferLineGoToBuffer -1<CR>", { silent = true })
 -- shift alt h/l to rearrange tabs
 vim.keymap.set("n", "<A-H>", ":BufferLineMovePrev<CR>", { silent = true })
 vim.keymap.set("n", "<A-L>", ":BufferLineMoveNext<CR>", { silent = true })
+
+-- ctrl shift k to toggle inlay hints
+vim.keymap.set("n", "<C-K>", function ()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)

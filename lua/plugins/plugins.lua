@@ -4,6 +4,7 @@ return {
         "noice.nvim",
         opts = {
             lsp = {
+                hover = { silent = true },
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                     ["vim.lsp.util.stylize_markdown"] = true,
@@ -71,13 +72,6 @@ return {
             },
         },
     },
-    -- {
-    --     "axkirillov/hbac.nvim",
-    --     config = true,
-    --     opts = {
-    --         threshold = 0,
-    --     },
-    -- },
     {
         "folke/snacks.nvim",
         keys = {
@@ -94,6 +88,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = {
+            inlay_hints = { enabled = false },
             servers = {
                 ["*"] = {
                     keys = {
@@ -109,6 +104,13 @@ return {
                 },
                 clangd = {
                     cmd = { "clangd", "--header-insertion=never" },
+                },
+                vtsls = {
+                    experimental = {
+                        completion = {
+                            enableServerSideFuzzyMatch = false,
+                        },
+                    },
                 },
             },
         },
@@ -156,6 +158,7 @@ return {
                 sources = {
                     explorer = {
                         hidden = true,
+                        ignored = true,
                         layout = {
                             layout = {
                                 width = 32,

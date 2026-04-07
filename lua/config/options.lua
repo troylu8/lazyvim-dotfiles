@@ -13,3 +13,4 @@ vim.opt.listchars = {
     tab = "  ",
     trail = " ",
 }
+vim.lsp.inlay_hint.enable(false)
