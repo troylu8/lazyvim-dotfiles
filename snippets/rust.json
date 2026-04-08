@@ -1,0 +1,12 @@
+{
+    "print something": {
+        "prefix": "pr",
+        "body": "println!(\"{}\", $0);",
+        "description": "print something"
+    },
+    "pretty print something": {
+        "prefix": "ppr",
+        "body": "println!(\"{:?}\", $0);",
+        "description": "pretty print something"
+    }
+}
