@@ -1,0 +1,29 @@
+{
+    "print something": {
+        "prefix": "pr",
+        "body": "println(\"$0\\n\");",
+        "description": "print something"
+    },
+    
+    "main function": {
+        "prefix": "main",
+        "body": [
+            "int main() {",
+            "\t",
+            "\t$0",
+            "\t",
+            "\treturn 0;",
+            "}"
+        ]
+    },
+    
+    "for i": {
+        "prefix": "fori",
+        "body": [
+            "for (int i = 0; i < ${1:amt}; i++) {",
+            "    $0",
+            "}"
+        ],
+        "description": "for loop with i variable"
+    }
+}

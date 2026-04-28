@@ -4,6 +4,12 @@ return {
         "noice.nvim",
         opts = {
             lsp = {
+                signature = {
+                    enabled = false,
+                    auto_open = {
+                        trigger = false,
+                    },
+                },
                 hover = { silent = true },
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -149,6 +155,12 @@ return {
                     enabled = false,
                 },
             },
+            signature = {
+                enabled = true,
+                window = {
+                    show_documentation = false
+                }
+            }
         },
     },
     {
