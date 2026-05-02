@@ -39,9 +39,13 @@ vim.keymap.set("n", "<A-8>", ":BufferLineGoToBuffer 8<CR>", { silent = true })
 vim.keymap.set("n", "<A-9>", ":BufferLineGoToBuffer 9<CR>", { silent = true })
 vim.keymap.set("n", "<A-0>", ":BufferLineGoToBuffer -1<CR>", { silent = true })
 
--- shift alt h/l to rearrange tabs
-vim.keymap.set("n", "<A-H>", ":BufferLineMovePrev<CR>", { silent = true })
-vim.keymap.set("n", "<A-L>", ":BufferLineMoveNext<CR>", { silent = true })
+-- alt h/l to switch tabs
+vim.keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>", { silent = true })
+vim.keymap.set("n", "<A-l>", ":BufferLineCycleNext<CR>", { silent = true })
+
+-- ctrl alt h/l to rearrange tabs
+vim.keymap.set("n", "<C-A-h>", ":BufferLineMovePrev<CR>", { silent = true })
+vim.keymap.set("n", "<C-A-l>", ":BufferLineMoveNext<CR>", { silent = true })
 
 -- ctrl shift k to toggle inlay hints
 vim.keymap.set("n", "<C-K>", function ()
