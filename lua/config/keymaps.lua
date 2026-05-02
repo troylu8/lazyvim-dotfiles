@@ -42,6 +42,8 @@ vim.keymap.set("n", "<A-0>", ":BufferLineGoToBuffer -1<CR>", { silent = true })
 -- alt h/l to switch tabs
 vim.keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>", { silent = true })
 vim.keymap.set("n", "<A-l>", ":BufferLineCycleNext<CR>", { silent = true })
+vim.keymap.del("n", "<S-h>") -- disable default tab switching keybinds
+vim.keymap.del("n", "<S-l>")
 
 -- ctrl alt h/l to rearrange tabs
 vim.keymap.set("n", "<C-A-h>", ":BufferLineMovePrev<CR>", { silent = true })
