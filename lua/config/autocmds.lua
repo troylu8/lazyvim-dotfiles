@@ -48,9 +48,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
         -- if new buf is neither active nor the preview buf
         if active_bufs[e.buf] == nil and e.buf ~= preview_buf then
+
             -- if there's an existing preview buf, delete it
             if preview_buf ~= -1 then
                 local buf_to_delete = preview_buf
+
+                -- don't try to delete the [No Name] buf
+                if vim.api.nvim_buf_get_name(buf_to_delete) == "" then
+                    return
+                end
+
                 vim.schedule(function()
                     if vim.api.nvim_buf_is_valid(buf_to_delete) then
                         vim.bo[buf_to_delete].buflisted = false
