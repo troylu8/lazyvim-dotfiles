@@ -27,3 +27,7 @@ vim.g.clipboard = {
     },
     cache_enabled = 0,
 }
+
+vim.g.scrollview_diagnostics_hint_symbol = "."
+vim.g.scrollview_diagnostics_info_symbol = "."
+vim.g.scrollview_diagnostics_warn_symbol = "."
