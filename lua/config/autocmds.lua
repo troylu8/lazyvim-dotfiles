@@ -46,8 +46,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
             return
         end
 
-        -- if new buf is neither active nor the preview buf
-        if active_bufs[e.buf] == nil and e.buf ~= preview_buf then
+        -- if the new buf is NOT active/preview/[No Name]
+        if active_bufs[e.buf] == nil and e.buf ~= preview_buf and vim.api.nvim_buf_get_name(e.buf) ~= "" then
 
             -- if there's an existing preview buf, delete it
             if preview_buf ~= -1 then
