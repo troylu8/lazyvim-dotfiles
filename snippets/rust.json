@@ -1,12 +1,14 @@
 {
     "print something": {
         "prefix": "pr",
-        "body": "println!(\"{}\", $0);",
-        "description": "print something"
+        "body": "println!(\"$0\");"
     },
     "pretty print something": {
         "prefix": "ppr",
-        "body": "println!(\"{:?}\", $0);",
-        "description": "pretty print something"
+        "body": "println!(\"{:?}\", $0);"
+    },
+    "derive something": {
+        "prefix": "der",
+        "body": "#[derive($0)]"
     }
 }

@@ -7,6 +7,13 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "text" },
+    callback = function()
+        vim.opt_local.spell = false
+    end,
+})
+
 -- ********** START ACTIVE/PREVIEW BUFFERS BEHAVIOR **********
 
 local active_bufs = {}
@@ -48,7 +55,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
         -- if the new buf is NOT active/preview/[No Name]
         if active_bufs[e.buf] == nil and e.buf ~= preview_buf and vim.api.nvim_buf_get_name(e.buf) ~= "" then
-
             -- if there's an existing preview buf, delete it
             if preview_buf ~= -1 then
                 local buf_to_delete = preview_buf
