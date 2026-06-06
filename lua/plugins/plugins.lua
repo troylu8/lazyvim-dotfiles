@@ -30,20 +30,20 @@ return {
             },
         },
     },
-    {
-        "catppuccin/nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {
-            custom_highlights = function(colors)
-                return {
-                    CursorLineNr = { fg = colors.mauve, style = { "bold" } },
-                    LineNrAbove = { fg = colors.lavender },
-                    LineNrBelow = { fg = colors.lavender },
-                }
-            end,
-        },
-    },
+    -- {
+    --     "catppuccin/nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --         custom_highlights = function(colors)
+    --             return {
+    --                 CursorLineNr = { fg = colors.mauve, style = { "bold" } },
+    --                 LineNrAbove = { fg = colors.lavender },
+    --                 LineNrBelow = { fg = colors.lavender },
+    --             }
+    --         end,
+    --     },
+    -- },
     {
         "LazyVim/LazyVim",
         opts = {
@@ -142,7 +142,7 @@ return {
                 lualine_c = { "diagnostics" },
                 lualine_x = { { "filename", path = 1 } },
                 lualine_y = { "filetype" },
-                lualine_z = {  },
+                lualine_z = {},
             },
         },
     },
@@ -158,9 +158,9 @@ return {
             signature = {
                 enabled = true,
                 window = {
-                    show_documentation = false
-                }
-            }
+                    show_documentation = false,
+                },
+            },
         },
     },
     {
