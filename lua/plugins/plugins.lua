@@ -149,11 +149,23 @@ return {
     {
         "saghen/blink.cmp",
         opts = {
-            keymap = { preset = "super-tab" },
+            keymap = {
+                -- preset = "default",
+                ["<C-Space>"] = { "show", "fallback" },
+                ["<Tab>"] = { "select_next", "fallback" },
+                ["<S-Tab>"] = { "select_prev", "fallback" },
+                ["<Enter>"] = { "accept", "fallback" },
+            },
             completion = {
                 ghost_text = {
                     enabled = false,
                 },
+                list = {
+                    selection = {
+                        preselect = false,
+                        auto_insert = true
+                    }
+                }
             },
             signature = {
                 enabled = true,
