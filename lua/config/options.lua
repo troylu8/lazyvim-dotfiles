@@ -32,3 +32,4 @@ vim.g.scrollview_diagnostics_hint_symbol = "."
 vim.g.scrollview_diagnostics_info_symbol = "."
 vim.g.scrollview_diagnostics_warn_symbol = "."
 vim.g.scrollview_diagnostics_error_symbol = "!"
+

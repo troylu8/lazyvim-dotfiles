@@ -51,6 +51,14 @@ return {
                 auto = false,
             },
             colorscheme = "catppuccin-mocha",
+            icons = {
+                diagnostics = {
+                    Error = "!",
+                    Warn = "",
+                    Hint = "",
+                    Info = "",
+                },
+            },
         },
     },
     {
@@ -150,22 +158,14 @@ return {
         "saghen/blink.cmp",
         opts = {
             keymap = {
-                -- preset = "default",
-                ["<C-Space>"] = { "show", "fallback" },
-                ["<Tab>"] = { "select_next", "fallback" },
-                ["<S-Tab>"] = { "select_prev", "fallback" },
-                ["<Enter>"] = { "accept", "fallback" },
+                preset = "super-tab",
+                ["<A-j>"] = { "select_next", "fallback" },
+                ["<A-k>"] = { "select_prev", "fallback" },
             },
             completion = {
                 ghost_text = {
                     enabled = false,
                 },
-                list = {
-                    selection = {
-                        preselect = false,
-                        auto_insert = true
-                    }
-                }
             },
             signature = {
                 enabled = true,
@@ -258,4 +258,14 @@ return {
             { "gz", "", desc = "+surround" },
         },
     },
+    {
+        "zaldih/themery.nvim",
+        opts = {
+            themes = {"catppuccin-mocha", "catppuccin-macchiato", "catppuccin-frappe", "catppuccin-latte", "nightfox", "dayfox"}
+        }
+    },
+    {
+        "EdenEast/nightfox.nvim"
+    }
+
 }

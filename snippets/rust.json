@@ -10,5 +10,13 @@
     "derive something": {
         "prefix": "der",
         "body": "#[derive($0)]"
+    },
+    "debug print something": {
+        "prefix": "db",
+        "body": "dbg!($0);"
+    },
+    "bevy commands systemparam": {
+        "prefix": "cmd",
+        "body": "mut commands: Commands"
     }
 }

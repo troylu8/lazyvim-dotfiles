@@ -10,13 +10,13 @@ vim.keymap.set("i", "<C-Del>", "<C-o>dw")
 -- f2 to rename
 vim.keymap.set({ "n", "i" }, "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
--- ctrl alt J/K to scroll while keeping cursor still
-vim.keymap.set({"n", "i"}, "<C-M-K>", "8<C-y>")
-vim.keymap.set({"n", "i"}, "<C-M-J>", "8<C-e>")
+-- shift J/K to scroll while keeping cursor still
+vim.keymap.set("n", "<S-k>", "10<C-y>")
+vim.keymap.set("n", "<S-j>", "10<C-e>")
 
--- center when C-u or C-d
-vim.keymap.set("n", "<C-u>", "8<C-u>zz")
-vim.keymap.set("n", "<C-d>", "8<C-d>zz")
+-- set C-u and C-d length
+vim.keymap.set("n", "<C-u>", "10k", { silent = true })
+vim.keymap.set("n", "<C-d>", "10j", { silent = true })
 
 -- toggle comments
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
@@ -50,6 +50,6 @@ vim.keymap.set("n", "<C-A-h>", ":BufferLineMovePrev<CR>", { silent = true })
 vim.keymap.set("n", "<C-A-l>", ":BufferLineMoveNext<CR>", { silent = true })
 
 -- ctrl shift k to toggle inlay hints
-vim.keymap.set("n", "<C-K>", function ()
+vim.keymap.set("n", "<C-K>", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
