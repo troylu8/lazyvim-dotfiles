@@ -10,13 +10,13 @@ vim.keymap.set("i", "<C-Del>", "<C-o>dw")
 -- f2 to rename
 vim.keymap.set({ "n", "i" }, "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
--- shift J/K to scroll while keeping cursor still
-vim.keymap.set("n", "<S-k>", "10<C-y>")
-vim.keymap.set("n", "<S-j>", "10<C-e>")
+-- ctrl J/K to do it 10 times
+vim.keymap.set("n", "<C-k>", "10k")
+vim.keymap.set("n", "<C-j>", "10j")
 
 -- set C-u and C-d length
-vim.keymap.set("n", "<C-u>", "10k", { silent = true })
-vim.keymap.set("n", "<C-d>", "10j", { silent = true })
+vim.keymap.set("n", "<C-u>", "10<C-u>zz", { silent = true })
+vim.keymap.set("n", "<C-d>", "10<C-d>zz", { silent = true })
 
 -- toggle comments
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
