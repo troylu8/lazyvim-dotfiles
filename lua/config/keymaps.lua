@@ -49,7 +49,11 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.set("n", "<C-A-h>", ":BufferLineMovePrev<CR>", { silent = true })
 vim.keymap.set("n", "<C-A-l>", ":BufferLineMoveNext<CR>", { silent = true })
 
--- ctrl k to toggle inlay hints
-vim.keymap.set("n", "<C-K>", function()
+-- ctrl shift k to toggle inlay hints
+vim.keymap.set("n", "<C-S-k>", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
+
+
+-- ctrl shift b to toggle git blame
+vim.keymap.set("n", "<C-S-b>", ":GitBlameToggle<CR>", { silent = true })

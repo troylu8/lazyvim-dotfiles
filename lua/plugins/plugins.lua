@@ -155,7 +155,7 @@ return {
         "mason-org/mason.nvim",
         opts = function(_, opts)
             opts.ensure_installed = {}
-        end
+        end,
     },
     {
         "akinsho/bufferline.nvim",
@@ -300,5 +300,12 @@ return {
     },
     {
         "EdenEast/nightfox.nvim",
+    },
+    {
+        "f-person/git-blame.nvim",
+        opts = {
+            event = "VeryLazy",
+            date_format = "%x"
+        }
     },
 }

@@ -33,3 +33,4 @@ vim.g.scrollview_diagnostics_info_symbol = "."
 vim.g.scrollview_diagnostics_warn_symbol = "."
 vim.g.scrollview_diagnostics_error_symbol = "!"
 
+vim.g.gitblame_enabled = 0
