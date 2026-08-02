@@ -49,7 +49,7 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.set("n", "<C-A-h>", ":BufferLineMovePrev<CR>", { silent = true })
 vim.keymap.set("n", "<C-A-l>", ":BufferLineMoveNext<CR>", { silent = true })
 
--- ctrl shift k to toggle inlay hints
+-- ctrl k to toggle inlay hints
 vim.keymap.set("n", "<C-K>", function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)

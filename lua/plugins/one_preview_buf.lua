@@ -43,12 +43,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
             return
         end
 
-        -- skip when switching into a buf that isn't a normal file buf
+        -- ignore if we are switching into a buf that isn't a normal file buf
         if vim.bo[e.buf].buftype ~= "" then
             return
         end
 
-        -- skip when switching into the [No Name] buf
+        -- ignore if we are switching into the [No Name] buf
         if vim.api.nvim_buf_get_name(e.buf) == "" then
             return
         end

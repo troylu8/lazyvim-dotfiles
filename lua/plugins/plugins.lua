@@ -69,6 +69,7 @@ return {
                 cpp = { "clang-format" },
                 typescript = { "prettier" },
                 typescriptreact = { "prettier" },
+                markdown = {},
             },
             formatters = {
                 ["clang-format"] = {
@@ -84,6 +85,14 @@ return {
                         "false",
                     },
                 },
+            },
+        },
+    },
+    {
+        "mfussenegger/nvim-lint",
+        opts = {
+            linters_by_ft = {
+                markdown = {},
             },
         },
     },
@@ -127,8 +136,26 @@ return {
                         },
                     },
                 },
+                marksman = {
+                    enabled = false,
+                    mason = false,
+                },
+                markdown_toc = {
+                    enabled = false,
+                    mason = false,
+                },
+                markdownlint_cli2 = {
+                    enabled = false,
+                    mason = false,
+                },
             },
         },
+    },
+    {
+        "mason-org/mason.nvim",
+        opts = function(_, opts)
+            opts.ensure_installed = {}
+        end
     },
     {
         "akinsho/bufferline.nvim",
@@ -261,11 +288,17 @@ return {
     {
         "zaldih/themery.nvim",
         opts = {
-            themes = {"catppuccin-mocha", "catppuccin-macchiato", "catppuccin-frappe", "catppuccin-latte", "nightfox", "dayfox"}
-        }
+            themes = {
+                "catppuccin-mocha",
+                "catppuccin-macchiato",
+                "catppuccin-frappe",
+                "catppuccin-latte",
+                "nightfox",
+                "dayfox",
+            },
+        },
     },
     {
-        "EdenEast/nightfox.nvim"
-    }
-
+        "EdenEast/nightfox.nvim",
+    },
 }

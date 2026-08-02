@@ -16,7 +16,7 @@
         "body": "dbg!($0);"
     },
     "bevy commands systemparam": {
-        "prefix": "cmd",
+        "prefix": "cmds",
         "body": "mut commands: Commands"
     }
 }
